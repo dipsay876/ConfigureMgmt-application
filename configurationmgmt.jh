@@ -1,0 +1,122 @@
+/**
+ * User entity.
+ * @author The DevOps team.
+ */
+entity UserMaster {
+	userName String required,
+    userPassword String required,
+    userRole Role    
+}
+
+/**
+ * Role enum.
+ * @author The DevOps team.
+ */
+enum Role {
+    Developer, Tester, Support, Management, Administrator
+}
+
+/**
+ * Environment enum.
+ * @author The DevOps team.
+ */
+enum EnvironmentMaster {
+    DEV, UAT, SIT, PP, PROD
+}
+
+/**
+ * Component entity.
+ * @author The DevOps team.
+ */
+entity ComponentMaster {
+	componentName String required,
+    componentDesc String
+}
+
+/**
+ * Layer enum.
+ * @author The DevOps team.
+ */
+enum Layer {
+	WEB, MS, DATA, CACHE, ESB, KAFKA, API
+}
+
+/**
+ * OS enum.
+ * @author The DevOps team.
+ */
+enum OS {
+	REDHATLINUX, WIN, MAC, UNIX, SPARC, AIX
+}
+
+/**
+ * OSVersion entity.
+ * @author The DevOps team.
+ */
+
+entity OSVersion {
+	osName OS required,
+    osVersion String required,
+    osVerDesc String
+}
+
+/**
+ * Host entity.
+ * @author The DevOps team.
+ */
+entity Host {
+	layerName Layer  required,
+    osName    OS     required,
+    osVersion String required,
+    hostName  String required,
+    hostIP    String
+    hostCPU  Long,
+    hostMemoryMB Long,
+    hostHDDGB Long
+}
+
+/**
+ * ConfigurationFile entity.
+ * @author The DevOps team.
+ */
+entity ConfigurationFile {
+	environmentName EnvironmentMaster required,
+    layerName Layer required,
+	componentName String required,
+    hostName String required,
+    confFileName String required,
+    confFileInstallPath String,
+    confFileUploadPath String
+}
+// an ignored comment
+/** not an ignored comment */
+
+//relationship OneToOne {
+//	User{userRole} to Role
+//}
+
+//relationship OneToOne {
+//	OSVersion{osName} to OS
+//}
+
+//relationship ManyToMany {
+//	Job{task(title)} to Task{job}
+//}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	ConfigurationFile{componentName} to ComponentMaster{componentName},
+    ConfigurationFile{hostName} to Host{hostName}
+}
+
+// Set pagination options
+paginate ConfigurationFile, ComponentMaster, Host, UserMaster, OSVersion  with infinite-scroll
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
