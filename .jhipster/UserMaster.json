@@ -1,0 +1,37 @@
+{
+    "name": "UserMaster",
+    "fields": [
+        {
+            "fieldName": "userName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userPassword",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userRole",
+            "fieldType": "Role",
+            "fieldValues": "Developer,Tester,Support,Management,Administrator"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191205134548",
+    "javadoc": "User entity.\\n@author The DevOps team.",
+    "entityTableName": "user_master",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "ConfigureMgmtSampleApplication",
+    "applications": "*",
+    "microserviceName": "ConfigureMgmtSampleApplication"
+}
