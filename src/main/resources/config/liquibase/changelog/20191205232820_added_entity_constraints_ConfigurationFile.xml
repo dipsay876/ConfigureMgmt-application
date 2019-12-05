@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ConfigurationFile.
+    -->
+    <changeSet id="20191205232820-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="component_name_id"
+                                 baseTableName="configuration_file"
+                                 constraintName="fk_configuration_file_component_name_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="component_master"/>
+
+        <addForeignKeyConstraint baseColumnNames="host_name_id"
+                                 baseTableName="configuration_file"
+                                 constraintName="fk_configuration_file_host_name_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="host"/>
+
+    </changeSet>
+</databaseChangeLog>
