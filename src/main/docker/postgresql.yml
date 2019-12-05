@@ -1,0 +1,11 @@
+version: '2'
+services:
+  configuremgmtsampleapplication-postgresql:
+    image: postgres:11.5
+    # volumes:
+    #     - ~/volumes/jhipster/ConfigureMgmtSampleApplication/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=ConfigureMgmtSampleApplication
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
