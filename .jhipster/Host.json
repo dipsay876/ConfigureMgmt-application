@@ -1,0 +1,72 @@
+{
+    "name": "Host",
+    "fields": [
+        {
+            "fieldName": "layerName",
+            "fieldType": "Layer",
+            "fieldValues": "WEB,MS,DATA,CACHE,ESB,KAFKA,API",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "osName",
+            "fieldType": "OS",
+            "fieldValues": "REDHATLINUX,WIN,MAC,UNIX,SPARC,AIX",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "osVersion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "hostName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "hostIP",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hostCPU",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "hostMemoryMB",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "hostHDDGB",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "configurationFile",
+            "otherEntityRelationshipName": "hostName",
+            "relationshipName": "hostName",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191205232819",
+    "javadoc": "Host entity.\\n@author The DevOps team.",
+    "entityTableName": "host",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "ConfigureMgmtSampleApplication",
+    "applications": "*",
+    "microserviceName": "ConfigureMgmtSampleApplication"
+}
