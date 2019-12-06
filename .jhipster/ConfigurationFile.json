@@ -1,0 +1,63 @@
+{
+    "name": "ConfigurationFile",
+    "fields": [
+        {
+            "fieldName": "environmentName",
+            "fieldType": "EnvironmentMaster",
+            "fieldValues": "DEV,UAT,SIT,PP,PROD",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "layerName",
+            "fieldType": "Layer",
+            "fieldValues": "WEB,MS,DATA,CACHE,ESB,KAFKA,API",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "componentName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "hostName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "confFileName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "confFileInstallPath",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "confFileUploadPath",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191206113333",
+    "javadoc": "ConfigurationFile entity.\\n@author The DevOps team.",
+    "entityTableName": "configuration_file",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "ConfigureMgmtSampleApplication",
+    "applications": "*",
+    "microserviceName": "ConfigureMgmtSampleApplication"
+}
