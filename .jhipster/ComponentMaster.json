@@ -1,0 +1,29 @@
+{
+    "name": "ComponentMaster",
+    "fields": [
+        {
+            "fieldName": "componentName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "componentDesc",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191206113330",
+    "javadoc": "Component entity.\\n@author The DevOps team.",
+    "entityTableName": "component_master",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "ConfigureMgmtSampleApplication",
+    "applications": "*",
+    "microserviceName": "ConfigureMgmtSampleApplication"
+}
